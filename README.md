@@ -1,4 +1,4 @@
-#**JOAS Journal Paper 2024**
+**JOAS Journal Paper 2024**
 
 Open access data and codes to reproduce publication's results
 
@@ -13,6 +13,7 @@ Before running the code, you need to specify/change path to the input/output dat
 We advice to run and understand the study on the small example first in order to be able to reproduce the whole study.
 
 The directory contains example codes for determining runways, calculation of PM Utilization in percent, and example codes to plot PM and non-PM trajectories. The Outputs folder is prepared for outputs from the scripts. The PM Datasets folder contains flight trajectories adhering to the PM systems at studied airports. The PM flights from full data folder contains codes on how to extract PM andhering trajectories from full dataset. Input for these codes needs to be downloaded from the OpenSky historical database individually. The PM utilization calculation folder contains codes to calculate the PM utilization at each of the studies airports.
+
 --------------------
 **SMALL EXAMPLE**
 -------------------
