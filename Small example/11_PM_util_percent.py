@@ -1,10 +1,11 @@
 import pandas as pd
 import os
 
-for dat in ['NW','NW','SW','SE']:
+#dat can be in ['NW','NW','SW','SE']
+for dat in ['SE']:
     data_dir = os.path.join('Output', 'ENGM_'+dat+'_ARCS.csv')
     flights1 = pd.read_csv(data_dir,header=None,sep=' ') 
-    list_col_names = ['x','s','flightID','last_star']
+    list_col_names = ['s','flightID','last_star']
     flights1.columns = list_col_names
     flights1 = flights1.drop(['s'], axis=1)
     PMus = flights1.copy()

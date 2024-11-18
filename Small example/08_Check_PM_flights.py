@@ -39,7 +39,7 @@ GM432_lat, GM432_lon = (60.761417,10.977667)
 
 DATA_DIR = os.path.join('Output', 'PM_VP_dataset.csv')
 flightsrwy = pd.read_csv(DATA_DIR, header=None, sep=' ') 
-list_col_names = ['ix','flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity','endDate', 'date']
+list_col_names = ['ix','flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity','endDate', 'date','time_in_final','time_to_final','altitude_ft']
 flightsrwy.columns = list_col_names
 
 

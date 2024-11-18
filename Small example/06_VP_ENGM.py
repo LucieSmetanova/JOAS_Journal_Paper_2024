@@ -81,35 +81,32 @@ import os
 #header=None,
 #sep=' '
 #) 
- PMsystem = 'SE'
- if PMsystem == 'NE':
-     if radius == 0.05:
-         file = 'GM418_rwy19_NEW'
-     elif radius == 0.03:
-         file = 'GM418_GM423_rwy19'
- elif PMsystem == 'NW':
-     if radius == 0.05:
-         file = 'GM429_GM432_rwy19'
-     elif radius == 0.03:
-         file = 'GM429_GM432_rwy19'
- elif PMsystem == 'SW':
-     if radius == 0.05:
-         file = 'GM405_GM410_rwy01'
-     elif radius == 0.03:
-         file = 'GM405_GM410_rwy01'
- else:
-     if radius == 0.05:
-         file = 'GM416_GM411_rwy01'
-     elif radius == 0.03:
-         file = 'GM416_GM411_rwy01'
+PMsystem = 'SE'
+if PMsystem == 'NE':
+    if radius == 0.05:
+        file = 'GM418_rwy19_NEW'
+    elif radius == 0.03:
+        file = 'GM418_GM423_rwy19'
+elif PMsystem == 'NW':
+    if radius == 0.05:
+        file = 'GM429_GM432_rwy19'
+    elif radius == 0.03:
+        file = 'GM429_GM432_rwy19'
+elif PMsystem == 'SW':
+    if radius == 0.05:
+        file = 'GM405_GM410_rwy01'
+    elif radius == 0.03:
+        file = 'GM405_GM410_rwy01'
+else:
+    if radius == 0.05:
+        file = 'GM416_GM411_rwy01'
+    elif radius == 0.03:
+        file = 'GM416_GM411_rwy01'
        
- DATA_DIR = os.path.join(r'C:\Users\lucsm87\Desktop\Opensky-main_new2\Data', 'ENGM')
- DATA_DIR = os.path.join(DATA_DIR, '2022')
- DATASET_DATA_DIR = os.path.join(DATA_DIR, "osn_ENGM_states_50NM_2022_filtered_by_altitude")
- filename = "PM_dataset_arrival_50NM_"+file+".csv"
- flightsrwy = pd.read_csv(os.path.join(DATASET_DATA_DIR, filename), sep=' ',
-     names = ['flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity', 'beginDate', 'endDate'],
-     dtype={'flightID':str, 'sequence':int, 'timestamp':int, 'lat':float, 'lon':float, 'rawAltitude':float, 'baroAltitude':float, 'velocity':float, 'beginDate':str, 'endDate':str})
+filename = "PM_dataset_arrival_50NM_"+file+".csv"
+flightsrwy = pd.read_csv(os.path.join('Output', filename), sep=' ',
+    names = ['flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity', 'beginDate', 'endDate'],
+    dtype={'flightID':str, 'sequence':int, 'timestamp':int, 'lat':float, 'lon':float, 'rawAltitude':float, 'baroAltitude':float, 'velocity':float, 'beginDate':str, 'endDate':str})
 
 #list_col_names = ['x','flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity','endDate', 'date']
 #flightsrwy.columns = list_col_names

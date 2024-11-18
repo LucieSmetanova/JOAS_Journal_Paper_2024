@@ -19,7 +19,7 @@ All the input and output .csv files are delimited with space.
 -------------
 The scripts:
 -------------
-- 01_ENGM_determine_runway_small - takes the raw input data and assign each flight trajectory to a runway
+- 01_ENGM_determine_runway_small - takes the raw input data and assigns each flight trajectory to a runway
 				 - gives two types of output files, one with runway indication for each flight and another with data subset based on runway
 - 02-05_ENGM_PM1-4 - outputs subset of flights adhering to the PM systems at Oslo Gardermoen airport
 - 06_VP_ENGM - Outputs the data after the second step of the algorithm (checks the vertical profiles)
@@ -27,5 +27,5 @@ The scripts:
 - 08_check_PM_flights - gives plot of flights in the PM_dataset for visual correctness check
 - 09_check_nonPM_flights - gives plot of flights not identified as PM
 - 10_PM_util_calc - takes the PM subsets as inputs and outputs files with information at which point each of the flights left the PM arc
-- 11_PM_util_percent - calculates the PM utilization in percents using output files from script 09
+- 11_PM_util_percent - calculates the PM utilization in percent using output files from script 09
 		     - the output is text log directly in Python IDE console

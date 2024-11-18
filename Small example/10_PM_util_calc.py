@@ -9,21 +9,22 @@ start_time = time.time()
 year = '2022'
 airport_icao = "ENGM"
 month = '10',
-
+radius = 0.03
 
 # ENGM PM system in ['SE','SW','NE','NW']
-for PMsystem in ['SE','SW','NE','NW']:
+for PMsystem in ['SE']:
    
     filename = "PM_VP_dataset_"+PMsystem+"_rad03.csv"
     flights1 = pd.read_csv(os.path.join('Output', filename), sep=' ',
-        names = ['flightId', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate'],
-        dtype={'flightId':str, 'sequence':int, 'timestamp':int, 'lat':float, 'lon':float, 'rawAltitude':float, 'altitude':float, 'velocity':float, 'beginDate':str, 'endDate':str})
+        names = ['flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate','time_in_final','time_to_final','altitude_ft'],
+        #dtype={'flightId':str, 'sequence':int, 'timestamp':int, 'lat':float, 'lon':float, 'rawAltitude':float, 'altitude':float, 'velocity':float, 'beginDate':str, 'endDate':str})
+        )
     
     
     
-    list_col_names = ['flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity','endDate', 'date']
-    flights1.columns = list_col_names
-    flights1 = flights1.drop(['date'], axis=1)
+    # list_col_names = ['flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity','endDate', 'date']
+    # flights1.columns = list_col_names
+    #flights1 = flights1.drop(['date'], axis=1)
         
     #drop false-positive flights
     for i in ['221001NOZ4ES','221026WIF144','221020SAS64P','221021NOZ1151','221022SAS4433','221023LBD1','221009MDT6',
@@ -171,6 +172,6 @@ for PMsystem in ['SE','SW','NE','NW']:
                     continue
     
 
-    filename = airport_icao+"_"+PMsystem+"_ARCS.csv
+    filename = airport_icao+"_"+PMsystem+"_ARCS.csv"
     PM_usage.to_csv(os.path.join('Output', filename), sep=' ', encoding='utf-8', float_format='%.3f', index = True, header = False)
     

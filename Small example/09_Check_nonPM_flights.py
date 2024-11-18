@@ -32,7 +32,7 @@ RT12_lon = [11.464278,11.792175,11.909139,11.954833,12.03375,12.03525,11.9595,11
 
 DATA_DIR = os.path.join('Output', 'PM_VP_dataset.csv')
 flightsPM = pd.read_csv(DATA_DIR,header=None,sep=' ') 
-list_col_names = ['xx','flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity','endDate', 'date']
+list_col_names = ['xx','flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'baroAltitude', 'velocity','endDate', 'date','time_in_final','time_to_final','altitude_ft']
 flightsPM.columns = list_col_names
 flightsPMh = flightsPM.groupby('flightID').head(1)
 print(len(flightsPMh))
