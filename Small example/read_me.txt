@@ -15,7 +15,9 @@ This folder is designed to run independently on device-specific paths. It can be
 To successfully obtain all the results, please run the scripts in the order indicated in the script names.
 
 All the input and output .csv files are delimited with space.
-
+The "Small_example_output" folder contains the outputs from each of the codes.
+The Input folder contains the necessary data for the small example
+The "Output" folder is placeholder prepared to store output files while running the codes.
 -------------
 The scripts:
 -------------
